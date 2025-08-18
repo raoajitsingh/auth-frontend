@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    background: radial-gradient(
+        1250px circle at 10% 10%,
+        #c7d2fe 0,
+        transparent 40%
+      ),
+      radial-gradient(1250px circle at 90% 0%, #fecaca 0, transparent 35%),
+      radial-gradient(1250px circle at 10% 90%, #bbf7d0 0, transparent 40%),
+      radial-gradient(1250px circle at 90% 90%, #fde68a 0, transparent 35%),
+      linear-gradient(120deg, #0f172a, #111827 60%, #0b1220);
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 0.35s ease both;
+  }
+  .animate-slide-up {
+    animation: slide-up 0.38s cubic-bezier(0.22, 0.7, 0.24, 1) both;
+  }
+  .animate-scale-in {
+    animation: scale-in 0.28s cubic-bezier(0.22, 0.7, 0.24, 1) both;
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
